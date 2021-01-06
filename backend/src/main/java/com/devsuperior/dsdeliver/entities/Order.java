@@ -1,6 +1,5 @@
 package com.devsuperior.dsdeliver.entities;
 
-
 import java.io.Serializable;
 import java.time.Instant;
 import java.util.HashSet;
@@ -19,9 +18,6 @@ import javax.persistence.Table;
 @Table(name = "tb_order")
 public class Order implements  Serializable {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	
 	@Id
@@ -37,7 +33,7 @@ public class Order implements  Serializable {
 	@JoinTable(name = "tb_order_product", 
 		joinColumns = @JoinColumn(name = "order_id"),
 		inverseJoinColumns = @JoinColumn(name = "product_id"))
-	private Set<Product> produts = new HashSet<>();
+	private Set<Product> products = new HashSet<>();
 	
 	public Order() {
 	}
@@ -101,7 +97,7 @@ public class Order implements  Serializable {
 	}
 
 	public Set<Product> getProduts() {
-		return produts;
+		return products;
 	}
 
 	@Override
